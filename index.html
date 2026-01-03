@@ -67,6 +67,15 @@
                             linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
         }
+
+        /* Timeline Card Hover */
+        .timeline-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .timeline-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            filter: brightness(1.1);
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white">
@@ -112,7 +121,6 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 bg-grid-pattern">
-        <!-- Background Gradient Orb -->
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-primary/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
         <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl -z-10"></div>
 
@@ -137,125 +145,188 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-slate-900/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
-                <div class="w-20 h-1 bg-brand-primary mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <div class="relative group">
-                        <div class="absolute -inset-1 bg-gradient-to-r from-brand-primary to-emerald-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-                        <div class="relative bg-slate-800 p-8 rounded-lg border border-slate-700">
-                            <i class="fas fa-industry text-5xl text-brand-primary mb-6"></i>
-                            <h3 class="text-xl font-bold text-white mb-2">Engineering & Data Synergy</h3>
-                            <p class="text-slate-400 leading-relaxed">
-                                현장의 '감'이 아닌 '데이터'로 설득합니다. 
-                                엔지니어링 도메인 지식 위에 머신러닝 분석 역량을 쌓아,
-                                공정 수율 향상과 예지 보전의 새로운 해법을 제시합니다.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal delay-100">
-                    <p class="text-lg text-slate-300 mb-6 leading-relaxed">
-                        안녕하세요. <strong class="text-white">데이터 분석 역량을 갖춘 공정 엔지니어</strong>입니다.
-                    </p>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
-                        <strong>Amkor Technology</strong>와 <strong>Royal Canin</strong>에서 근무하며, 복잡한 공정 변수 속에서 
-                        수율과 품질을 제어하는 실무를 경험했습니다. 이 과정에서 <span class="text-brand-accent">데이터 기반 의사결정</span>의 중요성을 절감했습니다.
-                    </p>
-                    <p class="text-slate-400 leading-relaxed">
-                        현재 <strong>Microsoft AI School</strong>에서 데이터 사이언스와 AI 기술을 집중적으로 학습하며, 
-                        기존의 공정 엔지니어링 역량을 한 단계 업그레이드하고 있습니다. 
-                        단순 운영을 넘어, 데이터를 통해 공정을 혁신하는 엔지니어가 되겠습니다.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline Section -->
+    <!-- Experience Section (Visual Redesign) -->
     <section id="experience" class="py-24 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-3xl font-bold text-white mb-4">Career Journey</h2>
-                <p class="text-slate-400">현장 엔지니어에서 데이터 전문가로의 확장</p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-3xl font-bold text-white mb-4 italic tracking-tight uppercase">Experience Flow</h2>
+                <div class="w-16 h-1 bg-brand-primary mx-auto rounded-full mb-6"></div>
+                <p class="text-slate-400">공정 엔지니어링의 실무와 데이터 사이언스의 융합 과정</p>
             </div>
 
-            <!-- Timeline Container -->
-            <div class="relative border-l-2 border-slate-700 ml-4 md:ml-10 space-y-12">
+            <!-- Horizontal Timeline: Blocks Style -->
+            <div class="mb-32 reveal">
+                <!-- Mobile Scroll Helper -->
+                <div class="md:hidden flex items-center justify-center gap-2 mb-4 text-slate-500 text-xs">
+                    <i class="fas fa-arrows-alt-h animate-bounce"></i> 옆으로 밀어서 전체 경력 보기
+                </div>
                 
-                <!-- Item 1: Microsoft AI School (Current/Future) -->
-                <div class="relative pl-8 md:pl-12 reveal">
-                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-emerald-500 rounded-full border-4 border-brand-dark shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
-                    <div class="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-xl hover:border-emerald-500/50 transition-colors">
-                        <span class="inline-block px-3 py-1 bg-emerald-900/30 text-emerald-400 text-xs font-semibold rounded-full mb-3 border border-emerald-500/20">
-                            Upskilling
-                        </span>
-                        <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-white">Microsoft AI School</h3>
-                            <span class="text-sm text-slate-400 font-mono mt-1 md:mt-0">2025.12.30 - 2026.06 (예정)</span>
+                <div class="overflow-x-auto pb-8 -mx-4 px-4 custom-scrollbar">
+                    <div class="min-w-[1200px] flex gap-4 h-64 items-end">
+                        
+                        <!-- 1. University -->
+                        <div class="flex-1 min-w-[180px] h-32 bg-slate-800/50 rounded-2xl border border-slate-700/50 p-5 timeline-card flex flex-col justify-between relative group">
+                            <div class="absolute -top-10 left-0 text-slate-500 font-mono text-xs">2013.03 - 2019.08</div>
+                            <div>
+                                <h4 class="text-slate-200 font-bold text-sm mb-1 uppercase tracking-tighter">University</h4>
+                                <p class="text-[11px] text-slate-500 font-medium">Electronic Engineering</p>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xs text-slate-600 font-bold uppercase">6y 5m</span>
+                                <i class="fas fa-graduation-cap text-slate-700 text-xl group-hover:text-slate-500 transition-colors"></i>
+                            </div>
+                            <!-- Connector -->
+                            <div class="absolute right-[-10px] top-1/2 -translate-y-1/2 text-slate-800 z-0">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
                         </div>
-                        <p class="text-emerald-400 font-medium mb-3">스마트 팩토리 구현을 위한 AI/Data 역량 강화</p>
-                        <ul class="list-disc list-inside text-slate-400 space-y-1 text-sm">
-                            <li><strong>공정 데이터 분석 심화:</strong> Python, Pandas를 활용한 대용량 센서 데이터 전처리 및 시각화</li>
-                            <li><strong>예지 보전 모델링:</strong> Machine Learning 알고리즘을 활용한 설비 이상 탐지 및 수명 예측 학습</li>
-                            <li><strong>클라우드 활용:</strong> Azure 기반의 데이터 파이프라인 구축 및 현장 적용 시나리오 연구</li>
-                        </ul>
+
+                        <!-- 2. Military (Overlap/Independent) -->
+                        <div class="flex-1 min-w-[180px] h-32 bg-sky-950/20 rounded-2xl border border-sky-900/30 p-5 timeline-card flex flex-col justify-between relative group">
+                            <div class="absolute -top-10 left-0 text-sky-600 font-mono text-xs">2014.07 - 2016.07</div>
+                            <div>
+                                <h4 class="text-sky-400 font-bold text-sm mb-1 uppercase tracking-tighter">Military Service</h4>
+                                <p class="text-[11px] text-sky-700 font-medium italic">Republic of Korea Air Force</p>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <span class="text-xs text-sky-800 font-bold uppercase">24 Months</span>
+                                <i class="fas fa-shield-alt text-sky-900/50 text-xl group-hover:text-sky-500 transition-colors"></i>
+                            </div>
+                            <div class="absolute right-[-10px] top-1/2 -translate-y-1/2 text-slate-800 z-0">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- 3. Amkor Technology -->
+                        <div class="flex-[2] min-w-[300px] h-48 bg-blue-900/20 rounded-2xl border border-blue-500/30 p-6 timeline-card flex flex-col justify-between relative group ring-1 ring-blue-500/10">
+                            <div class="absolute -top-10 left-0 text-blue-400 font-mono text-xs font-bold">2019.12 - 2025.03</div>
+                            <div>
+                                <span class="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-[10px] rounded uppercase font-bold tracking-widest mb-3 inline-block">Professional</span>
+                                <h4 class="text-white font-black text-lg mb-1 leading-tight">Amkor Technology</h4>
+                                <p class="text-sm text-blue-300/70 font-medium">Process Technology Engineer</p>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div class="flex flex-col">
+                                    <span class="text-2xl font-black text-blue-500 leading-none">5y 4m</span>
+                                    <span class="text-[10px] text-blue-700 font-bold uppercase mt-1 tracking-tighter">Career Length</span>
+                                </div>
+                                <i class="fas fa-microchip text-blue-900/40 text-4xl group-hover:text-blue-500/50 transition-colors"></i>
+                            </div>
+                            <div class="absolute right-[-10px] top-1/2 -translate-y-1/2 text-slate-800 z-0">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- 4. Royal Canin -->
+                        <div class="flex-1 min-w-[200px] h-40 bg-rose-950/20 rounded-2xl border border-rose-500/30 p-6 timeline-card flex flex-col justify-between relative group">
+                            <div class="absolute -top-10 left-0 text-rose-400 font-mono text-xs">2025.03 - 2025.09</div>
+                            <div>
+                                <h4 class="text-white font-bold text-md mb-1 uppercase tracking-tighter">Royal Canin</h4>
+                                <p class="text-[11px] text-rose-300/60 font-medium">Process Improvement</p>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <span class="text-lg font-black text-rose-500 leading-none tracking-tighter">6m</span>
+                                <i class="fas fa-industry text-rose-900/40 text-2xl group-hover:text-rose-500 transition-colors"></i>
+                            </div>
+                            <div class="absolute right-[-10px] top-1/2 -translate-y-1/2 text-slate-800 z-0">
+                                <i class="fas fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <!-- 5. MS AI School -->
+                        <div class="flex-1 min-w-[220px] h-56 bg-emerald-900/30 rounded-2xl border-2 border-emerald-500/50 p-6 timeline-card flex flex-col justify-between relative group shadow-[0_0_30px_rgba(16,185,129,0.15)] overflow-hidden">
+                            <!-- Background Pulse -->
+                            <div class="absolute top-0 right-0 p-2">
+                                <span class="relative flex h-3 w-3">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                            </div>
+
+                            <div class="absolute -top-10 left-0 text-emerald-400 font-mono text-xs font-bold">2025.12 - 2026.06</div>
+                            <div>
+                                <span class="px-2 py-0.5 bg-emerald-500 text-brand-dark text-[10px] rounded uppercase font-black tracking-widest mb-3 inline-block">Future Skill</span>
+                                <h4 class="text-white font-black text-lg mb-1 leading-tight">Microsoft<br>AI School</h4>
+                                <p class="text-xs text-emerald-400 font-bold uppercase tracking-tighter">AI Specialist Training</p>
+                            </div>
+                            <div class="flex justify-between items-end">
+                                <div class="flex flex-col">
+                                    <span class="text-2xl font-black text-emerald-400 leading-none">6m</span>
+                                    <span class="text-[10px] text-emerald-600 font-black uppercase mt-1 tracking-tighter">In Progress</span>
+                                </div>
+                                <i class="fas fa-brain text-emerald-500/40 text-4xl"></i>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+            </div>
 
-                <!-- Item 2: Royal Canin -->
-                <div class="relative pl-8 md:pl-12 reveal delay-100">
-                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-slate-600 rounded-full border-4 border-brand-dark"></div>
-                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 hover:bg-slate-800 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-slate-200">Royal Canin Korea</h3>
-                            <span class="text-sm text-slate-500 font-mono mt-1 md:mt-0">2025.03 - 2025.09</span>
+            <!-- Vertical Detailed Timeline (Existing but Refined) -->
+            <div class="max-w-4xl mx-auto">
+                <div class="relative border-l-2 border-slate-800 ml-4 md:ml-10 space-y-16">
+                    
+                    <!-- Item 1: MS AI School -->
+                    <div class="relative pl-10 md:pl-16 reveal">
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-emerald-500 rounded-full border-4 border-brand-dark shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
+                        <div class="group">
+                            <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-3">
+                                Microsoft AI School 
+                                <span class="text-xs font-mono text-emerald-500 bg-emerald-500/10 px-2 py-1 rounded">2025.12 - 2026.06</span>
+                            </h3>
+                            <p class="text-emerald-400 font-bold mb-4 flex items-center gap-2">
+                                <i class="fas fa-laptop-code"></i> AI & Data Analytics for Manufacturing
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm text-slate-400">
+                                <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                                    <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-check-circle text-emerald-500"></i> Core Learning</h4>
+                                    <ul class="space-y-1 ml-4 list-disc">
+                                        <li>제조 데이터 전처리 및 EDA</li>
+                                        <li>공정 이상 탐지 ML 모델</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
+                                    <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fas fa-cloud text-emerald-500"></i> Cloud & Ops</h4>
+                                    <ul class="space-y-1 ml-4 list-disc">
+                                        <li>Azure 기반 MLOps 기초</li>
+                                        <li>데이터 파이프라인 설계</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-slate-300 font-medium mb-3">공정 개선 엔지니어 (Process Improvement)</p>
-                        <ul class="list-disc list-inside text-slate-400 space-y-1 text-sm">
-                            <li>제조 라인 데이터 모니터링 및 병목 구간 분석을 통한 생산성(OEE) 증대</li>
-                            <li>공정 내 불합리 요소(Loss) 정량화 및 개선 프로세스 수립</li>
-                            <li>품질 데이터 트렌드 분석을 통한 공정 산포 관리</li>
-                        </ul>
                     </div>
-                </div>
 
-                <!-- Item 3: Amkor Technology -->
-                <div class="relative pl-8 md:pl-12 reveal delay-200">
-                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-slate-600 rounded-full border-4 border-brand-dark"></div>
-                    <div class="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 hover:bg-slate-800 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-                            <h3 class="text-xl font-bold text-slate-200">Amkor Technology Korea</h3>
-                            <span class="text-sm text-slate-500 font-mono mt-1 md:mt-0">2019.12 - 2025.03</span>
+                    <!-- Item 2: Royal Canin -->
+                    <div class="relative pl-10 md:pl-16 reveal delay-100">
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-rose-500 rounded-full border-4 border-brand-dark shadow-[0_0_10px_rgba(244,63,94,0.3)]"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Royal Canin Korea</h3>
+                            <p class="text-rose-400 font-medium mb-4 italic">Process Improvement Engineer (6 Months)</p>
+                            <ul class="list-disc list-inside text-slate-400 space-y-2 text-sm max-w-2xl">
+                                <li>가동률(OEE) 분석 및 병목 구간 개선으로 생산성 향상</li>
+                                <li>현장 로스(Loss) 정량화 및 표준 운영 가이드 구축</li>
+                            </ul>
                         </div>
-                        <p class="text-slate-300 font-medium mb-3">반도체 공정 기술 엔지니어 (Process Engineer)</p>
-                        <ul class="list-disc list-inside text-slate-400 space-y-1 text-sm">
-                            <li><strong>공정 최적화:</strong> 5년 이상 반도체 패키징 공정 파라미터(DOE) 설정 및 수율(Yield) 관리</li>
-                            <li><strong>문제 해결:</strong> 고질적 불량에 대한 RCA(Root Cause Analysis) 및 데이터 기반 개선책 적용</li>
-                            <li><strong>장비/공정 셋업:</strong> 신규 라인 셋업 및 공정 안정화 리딩, SPC 시스템 활용 관리</li>
-                        </ul>
                     </div>
-                </div>
 
-                 <!-- Item 4: University -->
-                 <div class="relative pl-8 md:pl-12 reveal delay-300">
-                    <div class="absolute -left-[9px] top-0 w-5 h-5 bg-slate-600 rounded-full border-4 border-brand-dark"></div>
-                    <div class="bg-slate-800/30 p-6 rounded-xl border border-slate-700/30">
-                        <div class="flex flex-col md:flex-row justify-between md:items-center mb-2">
-                            <h3 class="text-lg font-bold text-slate-300">대학교 (학사)</h3>
-                            <span class="text-sm text-slate-500 font-mono mt-1 md:mt-0">졸업</span>
+                    <!-- Item 3: Amkor -->
+                    <div class="relative pl-10 md:pl-16 reveal delay-200">
+                        <div class="absolute -left-[11px] top-0 w-5 h-5 bg-blue-600 rounded-full border-4 border-brand-dark shadow-[0_0_10px_rgba(37,99,235,0.3)]"></div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Amkor Technology Korea</h3>
+                            <p class="text-blue-400 font-bold mb-4 uppercase tracking-tighter">Process Technology Engineer (5 Years 4 Months)</p>
+                            <div class="space-y-4 text-sm text-slate-400 max-w-2xl">
+                                <p>반도체 패키징 양산 라인의 수율 관리와 공정 최적화를 전담하며, 통계적 기법(SPC, DOE)을 실무에 적용해 다수의 핵심 불량 이슈를 해결했습니다.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-900/30 border border-blue-500/20 text-blue-400 rounded-full text-xs">수율 최적화</span>
+                                    <span class="px-3 py-1 bg-blue-900/30 border border-blue-500/20 text-blue-400 rounded-full text-xs">SPC 분석</span>
+                                    <span class="px-3 py-1 bg-blue-900/30 border border-blue-500/20 text-blue-400 rounded-full text-xs">고객사 대응</span>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-slate-400 font-medium">전자공학 전공</p>
-                        <p class="text-slate-500 text-sm mt-2">반도체 소자, 회로 이론, 제어 공학 등 엔지니어링 기초 확립</p>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>
@@ -276,12 +347,11 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Process Expertise</h3>
                     <p class="text-slate-400 text-sm mb-4">
-                        반도체 공정(Packaging, Assembly)에 대한 깊은 이해를 바탕으로 현장의 물리적 현상을 정확히 해석합니다.
+                        반도체 공정에 대한 깊은 이해를 바탕으로 현장의 물리적 현상을 정확히 해석합니다.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Yield Analysis</span>
                         <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">DOE / SPC</span>
-                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Troubleshooting</span>
                     </div>
                 </div>
 
@@ -290,14 +360,13 @@
                     <div class="w-14 h-14 bg-emerald-900/50 rounded-lg flex items-center justify-center mb-6 text-emerald-400">
                         <i class="fas fa-chart-bar text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Data Analytics for Mfg</h3>
+                    <h3 class="text-xl font-bold text-white mb-3">Data Analytics</h3>
                     <p class="text-slate-400 text-sm mb-4">
-                        Excel을 넘어 Python과 AI를 활용해 공정 데이터를 심층 분석하고, 이상 징후를 예측합니다.
+                        Python과 AI를 활용해 공정 데이터를 심층 분석하고, 이상 징후를 예측합니다.
                     </p>
                     <div class="flex flex-wrap gap-2">
                         <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Python/Pandas</span>
                         <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Machine Learning</span>
-                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Predictive Maint.</span>
                     </div>
                 </div>
 
@@ -308,27 +377,21 @@
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Problem Solving</h3>
                     <p class="text-slate-400 text-sm mb-4">
-                        엔지니어의 직관과 데이터의 객관성을 결합하여 불량의 근본 원인을 찾아내고 개선합니다.
+                        엔지니어의 직관과 데이터의 객관성을 결합하여 불량의 근본 원인을 개선합니다.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">RCA (Root Cause)</span>
-                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Process Optimization</span>
-                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Communication</span>
+                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">RCA</span>
+                        <span class="px-2 py-1 bg-slate-700 text-slate-300 text-xs rounded">Optimization</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
+    <!-- Footer -->
     <footer id="contact" class="bg-slate-950 pt-20 pb-10 border-t border-slate-800">
         <div class="max-w-4xl mx-auto px-4 text-center reveal">
-            <h2 class="text-3xl font-bold text-white mb-6">Ready to Innovate</h2>
-            <p class="text-slate-400 mb-10">
-                공정 엔지니어링의 깊이에 데이터 분석의 넓이를 더했습니다.<br>
-                스마트 팩토리와 공정 효율화를 이끌어갈 준비가 되어 있습니다.
-            </p>
-            
+            <h2 class="text-3xl font-bold text-white mb-6 italic">Ready to Innovate</h2>
             <div class="flex justify-center gap-8 mb-12">
                 <a href="#" class="group flex flex-col items-center gap-2">
                     <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center group-hover:bg-brand-primary transition-colors">
@@ -349,59 +412,31 @@
                     <span class="text-sm text-slate-400 group-hover:text-white">GitHub</span>
                 </a>
             </div>
-
-            <p class="text-slate-600 text-sm">
-                &copy; 2026 Process Engineer with Data Insights. All rights reserved.
-            </p>
+            <p class="text-slate-600 text-sm">&copy; 2026 Process Engineer Portfolio.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Interactivity -->
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const links = document.querySelectorAll('.mobile-link');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        links.forEach(link => link.addEventListener('click', () => menu.classList.add('hidden')));
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-
-        // Intersection Observer for Scroll Animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
+        // Animations
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Navbar Blur Effect on Scroll
+        // Navbar Scroll
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-lg');
-                navbar.classList.replace('bg-brand-dark/90', 'bg-brand-dark/95');
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.classList.replace('bg-brand-dark/95', 'bg-brand-dark/90');
-            }
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) nav.classList.add('bg-brand-dark/95', 'shadow-xl');
+            else nav.classList.remove('shadow-xl');
         });
     </script>
 </body>
